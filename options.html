@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="twitchJS">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Twitch.JS Dashboard</title>
+
+        <!-- CSS Files -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="twitchjs-navbar">
+            <div class="container">
+                <img src="img/logo.png" title="Twitch.JS" alt="Twitch.JS" />
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="twitchjs-panel">
+                        <strong>Twitch.JS v0.1.0</strong> - 
+                        Initial Release. Features include, commands and text based intervals.
+                    </div>
+                </div>
+                <div class="col-sm-6" ng-controller="commandCntrl">
+                    <div class="twitchjs-panel">
+                        <h1>Commands</h1>
+                        <div class="commands" ng-repeat="command in commands track by $index">
+                            <div class="row twitchjs-command">
+                                <div class="col-xs-4">
+                                    <input type="text" class="form-control" placeholder="Command" ng-model="command.trigger">
+                                </div>
+                                <div class="col-xs-8">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Response" ng-model="command.response">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-danger" type="button" ng-click="removeCommand($index)"><span class="glyphicon glyphicon-remove"></span></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-offset-6 col-sm-3">
+                                <button type="button" class="btn btn-primary btn-block" ng-click="addCommand()">Add New</button>
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="button" class="btn btn-primary btn-block" ng-click="saveCommands()">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.col-sm-6 (commands) -->
+                <div class="col-sm-6" ng-controller="intervalCntrl">
+                    <div class="twitchjs-panel">
+                        <h1>Intervals</h1>
+                        <div class="intervals" ng-repeat="interval in intervals">
+                            <div class="row twitchjs-command">
+                                <div class="col-xs-2">
+                                    <input type="text" class="form-control" placeholder="Sec" pattern="\d*" ng-model="interval.time">
+                                </div>
+                                <div class="col-xs-10">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Response" ng-model="interval.text">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-danger" type="button" ng-click="removeInterval($index)"><span class="glyphicon glyphicon-remove"></span></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-offset-6 col-sm-3">
+                                <button type="button" class="btn btn-primary btn-block" ng-click="addInterval()">Add New</button>
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="button" class="btn btn-primary btn-block" ng-click="saveIntervals()">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.col-sm-6 (intervals) -->
+                <div class="col-sm-12">
+                    <div class="twitchjs-panel">
+                        <h1>About</h1>
+                        Twitch.JS is a JavaScript powered chat bot for Twitch.TV.  In this dashboard you can edit your commands for your Twitch bot.
+                    </div>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+
+
+        <!-- Javascript Files --->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/localstorage.js">S</script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>

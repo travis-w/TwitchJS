@@ -1,0 +1,33 @@
+body {
+    background-color: #F2F2F2;
+}
+
+.twitchjs-navbar {
+    background-color: #4C4C4C;
+    color: #8266B6;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.twitchjs-panel {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 2px #888888;
+}
+
+.twitchjs-panel h1 {
+    font-size: 25px;
+    margin-top: 0px;
+    border: 0px;
+    padding-bottom: 5px;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: #EEEEEE;
+    font-weight: 600;
+}
+
+.twitchjs-command {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "TwitchJS",
+  "version": "0.1.0",
+  "description": "Javascript Bot for Twitch.TV",
+  
+  "icons": {
+    "128": "img/icon128.png" 
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://www.twitch.tv/*/chat?popout=twitchjs", "http://www.twitch.tv/*"],
+      "js": ["js/jquery.js", "js/contentscript.js"]
+    }
+  ],
+  "background": {
+    "page": "background.html"
+  },
+  
+  "options_page": "options.html"
+
+}
